@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" href="../images/sww-logo.jpeg">
+
+    <!-- <link rel="stylesheet" type="text/css" href="./css/owl.carousel.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+    <title>Studio Woven Walls</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    section {
+        opacity: 0;
+        /* Initially hidden */
+        transition: opacity 0.3s ease-in-out;
+        /* Smooth transition for opacity change */
+    }
+    .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    /* color: rgba(0, 0, 0, .7); */
+    color: #969696 !important;
+}
+    body{
+        font-family: "Poppins", sans-serif;
+        /* font-family: "Bebas Neue", sans-serif; */
+        font-size: 1rem;
+        background-color: #000;
+        color: white !important;
+    }
+    .navbar-light .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 255, 09.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    footer{
+    background-color: #000;
+    padding: 2%;
+}
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fadeInLeft {
+        animation-name: fadeInLeft;
+        animation-duration: 1.2s;
+        animation-fill-mode: both;
+        /* Keeps the element at the end state of the animation */
+    }
+
+    .animate {
+        /* This class gets added via JavaScript */
+        animation: fadeInLeft 1s forwards;
+        /* 'forwards' keeps the element in the final state post-animation */
+    }
+    .navbar-expand-lg .navbar-nav .nav-link{
+        padding-left: 2rem;
+        color: #FFF;
+        background-color: #000;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link .active {
+        color: #FFF !important;
+        font-weight: 900;
+        
+    }
+    .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link{
+        color: #FFF !important;
+    }
+    .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link:hover{
+        color: #FFF !important;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link .active {
+        color: #FFF !important;
+        font-weight: 900;
+    }
+
+    .navbar-light .navbar-nav .nav-link.active,
+    .navbar-light .navbar-nav .show>.nav-link {
+        color: #FFF !important;
+    }
+
+    .navbar-light .navbar-nav .nav-link.active,
+    .navbar-light .navbar-nav .show>.nav-link:hover {
+        color: #fff !important;
+    }
+
+    .bg-light {
+        background-color: #000 !important;
+    }
+
+    .img-fluid {
+        width: 30% !important;
+    }
+
+    .sww-logo {
+        width: 13%;
+        margin-right: 2%;
+    }
+
+    /* Section */
+
+    .image-container {
+        width: 100%;
+        position: relative;
+        height: auto;
+        /* Adjust height based on content */
+    }
+
+    .image-container img {
+        position: absolute;
+        top: 0;
+        left: 30;
+        width: auto;
+        /* Maintain original image width */
+        height: auto;
+        /* Maintain original image height */
+        opacity: 0;
+        /* Start all images as invisible */
+        transition: opacity 1s ease-in-out;
+        z-index: 0;
+        /* Start with a base z-index */
+    }
+
+    .image-container img:first-child {
+        opacity: 1;
+        /* Make the first image visible initially */
+        z-index: 1;
+    }
+
+
+
+    /* Footer */
+    footer{
+    background-color: #000;
+    padding: 2%;
+}
+                .social-media{
+    display: flex;
+    width: 70%;
+    flex-direction: row;justify-content: flex-start;align-items: flex-start;
+  }
+.footer_logo{
+  margin-left: -6%;
+}
+.footer_address {
+  text-align: right;
+}
+.footer_address img{
+ margin-right: -10%;
+}
+
+    .social-media {
+        display: flex;
+        width: 70%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .footer_logo {
+        margin-left: -6%;
+    }
+
+    .footer_address {
+        text-align: right;
+    }
+
+    .footer_address img {
+        margin-right: -10%;
+    }
+
+
+    .social_footer_classes {
+        width: 100%;
+        margin-top: 3%;
+        margin-left: -80%;
+    }
+
+    .social-media>ul>li>a>img {
+        margin-left: -74%;
+
+    }
+
+    .contact_images {
+        width: 14%;
+        margin-top: 3%;
+    }
+
+    .contact-info li {
+        margin-left: -3%;
+    }
+
+#Banner-section .card{
+    background: transparent;
+    transition: all ease-in-out .15s;
+    border: none;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+#Banner-section .card:hover{
+    background: rgb(61, 60, 60);
+    cursor: pointer;
+    transition: all ease-in-out .45s;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+#Banner-section{
+    height: 80vh;
+    width: 100%;
+    /* background: url('./images/banner.jpeg'); */
+    backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
+    object-fit: contain;
+    background-position: center;
+    aspect-ratio: 12/9;
+   
+  }
+
+
+
+  #Banner-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/banner.jpeg');
+  /* background-image: url('./images/banner.jpeg'); Replace 'background.jpg' with your actual background image */
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Ensure the background is behind other content */
+  opacity: 0.9; /* Adjust the opacity as needed */
+  /* backdrop-filter: blur(500px);  */
+  filter: blur(8px);
+}
+
+    .Textual {
+        display: flex;
+        height: 80vh;
+        margin-left: 2%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
+    .create,
+    .awesome {
+        color: #fff;
+        font-size: 5rem !important;
+    }
+
+    .typing-text {
+        color: #fff;
+        min-height: 200px;
+        /* Adjust based on longest text */
+        display: inline-block;
+        /* float: left; */
+        font-size: 10rem;
+        font-family: "Bebas Neue", sans-serif;
+        overflow: hidden;
+        /* Ensures the animation doesn't overflow */
+        white-space: nowrap;
+        /* Prevents text from wrapping */
+        border-right: 2px solid #94BBCC;
+    }
+
+
+    .footer_logo {
+        width: 40%;
+    }
+
+    .banner-panel {
+        width: 100%;
+    }
+
+    .footer {
+        font-size: 1.2rem;
+    }
+
+    .social-media .bx {
+        font-size: 2.4rem;
+    }
+
+    .customizations {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .image-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .image-section img {
+        margin: 1%;
+        width: 55%;
+    }
+
+    .images-with-text {
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar-light .navbar-brand {
+        color: #FFF;
+    }
+
+    .common-heading {
+        border-bottom: 4px solid #94BBCC;
+        margin-bottom: 5%;
+    }
+
+    .common-button {
+
+        border: none;
+        background-color: #94BBCC;
+        padding: 1%;
+        text-decoration: none;
+        color: white;
+        border-radius: 5px;
+        transition: all ease-in-out .2s;
+    }
+
+    .common-button:hover {
+        color: white;
+        cursor: pointer;
+        background-color: #5097B3;
+    }
+
+    /* About Us Section */
+    #aboutus {
+        height: auto;
+        margin-top: 5%;
+    }
+
+    #productcat {
+        height: auto;
+        margin: 5%;
+    }
+
+    .about-us-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .about-us-header {
+        /* background-color: #e0e0e0; Slightly darker gray for the header */
+        color: black;
+        /* Black text color */
+        display: inline-block;
+        /* Only as wide as the content */
+        padding: 10px 40px;
+        /* Padding around the text */
+        z-index: 2;
+        text-transform: uppercase;
+        font-size: 2.4rem;
+        /* font-family: "Bebas Neue", sans-serif; */
+        font-family: "Lora", serif;
+        /* font-family: "Lato", sans-serif; */
+        font-weight: 600;
+        letter-spacing: 2px;
+        position: relative;
+        /* Needed for absolute positioning of the border */
+    }
+
+    .about-us-header::after {
+        content: '';
+        /* Required for pseudo-elements */
+        position: absolute;
+        /* Position relative to the header */
+        bottom: 50%;
+        /* Start from the bottom, goes up to half the header's height */
+        height: 27%;
+        /* Half the height of the header */
+        left: 0;
+        /* Align to the left side of the header */
+        right: 0;
+        /* Align to the right side of the header */
+        background-color: #cce4ee;
+        /* Black background for the pseudo-border */
+        z-index: -1;
+        top: 50%;
+    }
+
+    .about-us-section p {
+        font-size: 1.3rem;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .para-content {
+        width: 100%;
+        margin: 2%;
+    }
+
+    .dalle-image {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Swiper */
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        /* background: #5097B3; */
+        display: flex;
+        padding: 4%;
+        /* height: 50vh; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        /* height: 30vh; */
+        object-fit: cover;
+        filter: drop-shadow(10px 10px #94BBCC);
+    }
+.main-independent-card{
+    margin-right: .5%;
+    width: 50.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .first-section{
+display: flex;
+flex-direction: row;
+}
+.second-section{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+.second-section .card{
+    width: 39%;
+
+}
+.third-section{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+}
+    @media (max-width: 768px) {
+        .main-independent-card{
+    margin-right: 0%;
+    width: 100%;
+}
+.second-section .card {
+    width: 99%;
+}
+.third-section  {
+    flex-direction: column;
+}
+.third-section .card {
+    width: 100%;
+}
+
+        .Textual {
+            display: flex;
+            height: auto;
+            margin-left: 2%;
+            width: 100%;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+.first-section{
+
+    flex-direction: column;
+}
+.second-section{
+    flex-direction: column;
+}
+        .create,
+        .awesome {
+            color: #fff;
+            font-size: 2rem !important;
+        }
+
+        .typing-text {
+            color: #fff;
+            min-height: 20px;
+            /* Adjust based on longest text */
+            display: inline-block;
+            /* float: left; */
+            font-size: 3rem;
+            font-family: "Bebas Neue", sans-serif;
+            overflow: hidden;
+            /* Ensures the animation doesn't overflow */
+            white-space: nowrap;
+            /* Prevents text from wrapping */
+            border-right: 2px solid #94BBCC;
+        }
+
+        #Banner-section {
+            height: auto;
+            width: 100%;
+            background: url('./images/banner.jpeg');
+            backdrop-filter: blur(115px);
+            /* Adjust the blur intensity as needed */
+            object-fit: contain;
+            aspect-ratio: 12/9;
+            background-position: center;
+
+        }
+
+        .contact-info li {
+            margin-left: -3%;
+        }
+
+        .navbar-light .navbar-brand {
+            width: 70%;
+        }
+
+        .para-content {
+            width: 100%;
+            padding: 2%;
+            text-align: justify;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .swiper-slide {
+
+            padding: 3%;
+        }
+
+        .swiper-slide img {
+
+            width: 60%;
+        }
+
+        .common-button {
+            padding: 2%;
+        }
+
+        .images-with-text {
+            width: 25%;
+        }
+
+        .about-us-section p {
+            font-size: .9rem;
+        }
+
+        .dalle-image {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2%;
+        }
+
+        .about-us-header {
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .col-md-4 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .social-media {
+            width: 84%;
+            margin-left: -12%;
+
+        }
+
+        .social-media li {
+            margin: 0 10px;
+            margin-top: 4%;
+
+        }
+
+        .footer_address {
+            font-size: smaller;
+        }
+
+        .footer_logo {
+            width: 30%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            float: left;
+            margin-top: 4%;
+            margin-left: -4%;
+        }
+
+        .footer_logo img {
+            width: 22%
+        }
+
+        .social-media img {
+            margin-left: -2% !important;
+            width: 100%;
+        }
+
+        .footer_address {
+            font-size: small;
+            text-align: right;
+        }
+
+        .contact-info {
+            font-size: smaller;
+            text-align: left;
+        }
+
+        .contact-info img {
+            width: 10%;
+        }
+
+        .footer .col-md-4 {
+            margin-bottom: 10px;
+        }
+
+        .footer h3 {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+
+    }
+
+    @media only screen and (min-width: 1030px) and (max-width: 1366px) {
+        .footer_logo {
+            width: 40%;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- <section id="Banner-section" class="fadeInLeft">
+
+        <div class="Textual">
+            <h2 class="create">We </h2>
+            <h1 class="awesome mb-5">
+                CURATE
+            </h1>
+            <h1 class="typing-text" data-texts='["TUFTED ARTISTRIES", "KNOTTED LUXURIES", "WALL WORK","WALL ART"]'>
+            </h1>
+        </div>
+    </section> -->
+
+    <nav class="navbar navbar-expand-lg  sticky-top navbar-light bg-light">
+        <div class="container fadeInLeft">
+            <a class="navbar-brand" href="#">
+                <img src="../images/swwlogo.png" alt="" class='sww-logo'>Studio Woven Walls
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 align-items-end justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/aboutus/">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog/">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <body>
+
+        <section id="Banner-section" class="fadeInLeft p-5" loading="lazy">
+            <div class="container mt-5" style="height: auto;">
+                <div class="first-section" style="">
+                    <div class="textual-content">
+
+                        <h1 class="container" style="font-family: 'Bebas Neue', sans-serif; font-size: 5rem;color: #000;">
+                            Woven Wisdom
+                        </h1>
+                        <p class="mx-3">
+                            Woven Wisdom is a concept that embodies the fusion of knowledge, creativity, and insight.<br>
+                             Imagine a tapestry intricately woven with threads of wisdom, each strand representing a unique perspective, idea, or experience.
+                        </p>
+                    </div>
+                        
+                        <div class="main-independent-card card p-5" data-bs-toggle="modal" data-bs-target="#exampleModal" style="">
+                            Introducing Studio Woven Walls: Where Artistry Meets Interior Design
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="second-section" style="">
+                        
+                        
+                        <div class="card  m-2 p-5">
+                            Introducing Studio Woven Walls: Where Artistry Meets Interior Design
+                        </div>
+                        <div class="card m-2  p-5"  data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            Unveiling the Canvas: An Introduction to Interior Design Principles
+                        </div>
+                        <!-- <div class="card m-2  p-5">
+                            Introducing Studio Woven Walls: Where Artistry Meets Interior Design
+                        </div> -->
+                    </div>
+                    <div class="third-section" style="">
+        
+        
+                        <div class="card  m-2 p-5"data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            Creating a Focal Point in Your Room
+                        </div>
+                        <div class="card m-2  p-5" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Tailoring Artistry: Customizing Wall Art to Perfectly Fit Your Style
+                        </div>
+                        <div class="card m-2  p-5"data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                            Mastering Pattern Play: A Guide to Mixing and Matching Patterns and Prints
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+        </section>
+
+    
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content bg-dark text-light">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close Blog</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                  </div>
+                <!-- <button type="button" class="btn-close bg-primary text-light" data-bs-dismiss="modal" style="float: right;" aria-label="Close"></button> -->
+                <div class="card bg-dark text-light" style="filter: blur(2px);">
+                    <img src="../images/close-up-wooden-background-style-sopheap-pich.jpg" alt="" style="aspect-ratio: 20/3;object-fit: cover;object-position: top;">
+                </div>
+                <div class="modal-header">
+                  <h5 class="modal-title bg-dark text-light" id="exampleModalLabel">Introducing Studio Woven Walls: Where Artistry Meets Interior Design</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body  bg-dark text-light">
+                    <h4 style="text-align: center;">Welcome to Studio Woven Walls</h4>
+        <p>Welcome to Studio Woven Walls, where creativity, craftsmanship, and interior design converge to transform your space into a captivating canvas of expression. We are thrilled to embark on this journey of weaving together the threads of artistry and innovation to bring you an exquisite collection of woven wall art.</p>
+        
+        <p>At Studio Woven Walls, we believe that every wall has a story to tell and every space has the potential to be a work of art. Our mission is to redefine the concept of wall decor by introducing handcrafted woven pieces that not only adorn your walls but also evoke emotion, spark conversation, and elevate the aesthetic appeal of your surroundings.</p>
+        
+        <p>What sets Studio Woven Walls apart is our commitment to quality, craftsmanship, and sustainability. Each piece in our collection is meticulously handcrafted by skilled artisans using premium materials sourced from sustainable and ethical suppliers. From intricately woven tapestries to minimalist wall hangings, every creation reflects our dedication to excellence and attention to detail.</p>
+        
+        <p>But Studio Woven Walls is more than just a purveyor of woven art; it is a destination for inspiration, creativity, and collaboration. Our blog will serve as a platform for exploring the intersection of art and interior design, offering insightful articles, design tips, DIY tutorials, and behind-the-scenes glimpses into the creative process.</p>
+        
+        <p>Whether you are a seasoned interior designer, a decor enthusiast, or someone looking to add a touch of elegance to your living space, Studio Woven Walls invites you to embark on a journey of discovery and transformation. Join us as we explore the endless possibilities of woven walls and unlock the true potential of your interior spaces.</p>
+        
+        <p>Stay tuned for updates, exclusive promotions, and new arrivals as we embark on this exciting adventure together. Thank you for choosing Studio Woven Walls to be a part of your design story. Let's weave dreams into reality and turn walls into works of art.</p>
+        
+        <i>Welcome to Studio Woven Walls – where every thread tells a tale, and every wall is a masterpiece in the making.</i>
+    
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content bg-dark text-light">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close Blog</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                  </div>
+                <!-- <button type="button" class="btn-close bg-primary text-light" data-bs-dismiss="modal" style="float: right;" aria-label="Close"></button> -->
+                <div class="card bg-dark text-light" style="filter: blur(4px);">
+                    <img src="../images/high-angle-measuring-tools-still-life.jpg" alt="" style="aspect-ratio: 20/3;object-fit: cover;object-position: bottom;">
+                </div>
+                <div class="modal-header">
+                  <h5 class="modal-title  bg-dark text-light" id="exampleModalLabel">Unveiling the Canvas: An Introduction to Interior Design Principles</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-dark text-light">
+                    <h4 style="text-align: center;">Welcome to the World of Interior Design</h4>
+                    <p>Welcome to the world of interior design, where every space is a blank canvas waiting to be adorned with creativity, style, and personality. Whether you're a seasoned designer or a novice enthusiast, understanding the fundamental principles of interior design is essential for creating harmonious, functional, and visually captivating spaces. So, let's embark on a journey of exploration as we unravel the foundational elements that shape the art of interior design.</p>
+                    
+                    <h6>1. Balance: Finding Equilibrium in Design</h6>
+                    <p>Balance is the cornerstone of good design, serving as the anchor that harmonizes various elements within a space. There are two types of balance: symmetrical and asymmetrical. Symmetrical balance entails arranging elements evenly around a central axis, while asymmetrical balance involves achieving equilibrium through the careful placement of diverse elements of varying visual weight.</p>
+                    
+                    <h6>2. Proportion: The Golden Ratio of Design</h6>
+                    <p>Proportion refers to the relationship between different elements within a space, ensuring visual harmony and coherence. By adhering to principles such as the golden ratio and scale, designers can create spaces where every element feels proportionate and well-suited to its surroundings.</p>
+                    
+                    <h6>3. Harmony: Crafting Cohesive Compositions</h6>
+                    <p>Harmony is achieved when all elements within a space come together to create a unified and pleasing whole. This involves considering factors such as color, texture, pattern, and style to ensure that each element complements rather than competes with the others.</p>
+                    
+                    <h6>4. Rhythm: The Beat of Design</h6>
+                    <p>Rhythm infuses a space with energy and movement, guiding the eye through the design in a deliberate and engaging manner. Whether through repetition, progression, or contrast, rhythm adds depth and dynamism to interior compositions, creating visual interest and intrigue.</p>
+                    
+                    <h6>5. Emphasis: Directing the Spotlight</h6>
+                    <p>Emphasis allows designers to highlight focal points within a space, drawing attention to key elements and creating visual hierarchy. Whether through bold colors, striking patterns, or eye-catching artwork, emphasis adds drama and personality to interior design, guiding the viewer's gaze and evoking emotion.</p>
+                    
+                    <p>As we delve deeper into the realm of interior design, these principles will serve as our guiding stars, illuminating the path toward creating spaces that are not only beautiful and functional but also imbued with meaning and purpose. So, let your imagination soar, and let's embark on this creative journey together, one design principle at a time.</p>
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        <div class="modal fade " id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content bg-dark text-light">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close Blog</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                  </div>
+                <!-- <button type="button" class="btn-close bg-primary text-light" data-bs-dismiss="modal" style="float: right;" aria-label="Close"></button> -->
+                <div class="card bg-dark text-light" style="filter: blur(4px);">
+                    <img src="../images/multi-colored-pencils-wood-background-creative-education-material-generative-ai.jpg" alt="" style="aspect-ratio: 20/3;object-fit: cover;object-position: center;">
+                </div>
+                <div class="modal-header">
+                  <h5 class="modal-title  bg-dark text-light" id="exampleModalLabel">Creating a Focal Point in Your Room</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-dark text-light">
+                    <h4 style="text-align: center;">Creating a Focal Point with Studio Woven Walls</h4>
+                    <p>In the art of interior design, every room tells a story, and every story needs a focal point—a captivating element that draws the eye, anchors the space, and sets the tone for the entire room. Creating a focal point is an art in itself, requiring careful consideration of space, balance, and visual impact. Here at Studio Woven Walls, we believe that wall art has the power to transform any space into a focal point of beauty and inspiration. Let's explore the secrets to creating a focal point in your room, and discover why Studio Woven Walls is the perfect partner for crafting brilliance in your home.</p>
+                    
+                    <h6>Understanding the Power of Focal Points</h6>
+                    <p>A focal point serves as the visual anchor of a room, guiding the viewer's gaze and creating a sense of balance and harmony. Whether it's a striking piece of artwork, a statement piece of furniture, or an architectural feature such as a fireplace or a window, a well-chosen focal point instantly elevates the design of a room, adding depth, interest, and personality.</p>
+                    
+                    <h6>Choosing the Perfect Wall Art</h6>
+                    <p>When it comes to creating a focal point with wall art, Studio Woven Walls offers an unparalleled selection of handcrafted pieces that are sure to leave a lasting impression. Our collection features a diverse array of textures, colors, and styles, ensuring that you can find the perfect piece to complement your space and capture your unique aesthetic vision.</p>
+                    
+                    <h6>Making a Statement with Scale and Placement</h6>
+                    <p>When selecting wall art for a focal point, consider the scale and placement carefully. A large, dramatic piece can command attention and become the centerpiece of the room, while smaller pieces can be grouped together to create a gallery wall that adds visual interest and dimension. Studio Woven Walls' customizable options allow you to tailor the scale and placement of your wall art to suit your space perfectly.</p>
+                    
+                    <h6>Adding Depth and Dimension</h6>
+                    <p>Texture and dimension are essential elements in creating a compelling focal point. Studio Woven Walls' handcrafted pieces feature intricate weaves, rich textures, and tactile details that add depth and visual interest to any room. Whether you choose a woven tapestry, a sculptural wall hanging, or a mixed-media masterpiece, our wall art is sure to captivate and inspire.</p>
+                    
+                    <h6>Elevating Your Space with Studio Woven Walls</h6>
+                    <p>When it comes to creating a focal point in your room, Studio Woven Walls offers an unmatched combination of quality, craftsmanship, and creativity. Our handcrafted wall art is designed to transform your space into a masterpiece of design, drawing the eye and sparking conversation. With Studio Woven Walls, you can create a focal point that truly reflects your unique style and personality, turning any room into a work of art.</p>
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <!-- multi-colored-pencils-wood-background-creative-education-material-generative-ai -->
+        <div class="modal fade " id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content bg-dark text-light">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close Blog</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                  </div>
+                <!-- <button type="button" class="btn-close bg-primary text-light" data-bs-dismiss="modal" style="float: right;" aria-label="Close"></button> -->
+                <div class="card bg-dark text-light" style="filter: blur(4px);">
+                    <img src="../images/sewing-spool-tailor-cloth-vintage-background.jpg" alt="" style="aspect-ratio: 20/3;object-fit: cover;object-position: bottom;">
+                </div>
+                <div class="modal-header">
+                  <h5 class="modal-title " id="exampleModalLabel">Tailoring Artistry: Customizing Wall Art to Perfectly Fit Your Style</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body  bg-dark text-light">
+                    <p>Your home is a reflection of your personality, your passions, and your unique sense of style. It's where you express yourself, unwind, and create lasting memories. So why settle for generic, off-the-shelf wall art when you can have a piece that speaks to your individuality and complements your aesthetic perfectly? At Studio Woven Walls, we believe that customization is key to creating truly exceptional spaces. Let's explore how customizing wall art can elevate your home décor to new heights.</p>
+        
+                    <h5>1. Personalized Expression</h2>
+                    <p>Customizing wall art allows you to infuse your space with personal meaning and significance. Whether it's a favorite quote, a cherished photograph, or a piece inspired by your travels, personalized wall art adds a layer of depth and authenticity to your home. It's a reflection of who you are and what you love, making your space truly your own.</p>
+                    
+                    <h5>2. Tailored to Your Taste</h2>
+                    <p>With customization, you have the freedom to tailor every aspect of your wall art to suit your taste and style preferences. From choosing the colors and patterns to selecting the size and shape, every detail is customizable to ensure that your piece seamlessly integrates with your existing décor and reflects your unique aesthetic vision.</p>
+                    
+                    <h5>3. Endless Possibilities</h2>
+                    <p>The beauty of customization lies in its endless possibilities. Whether you prefer minimalist sophistication, bohemian charm, or eclectic flair, custom wall art can be tailored to suit any style or theme. Experiment with different materials, textures, and finishes to create a piece that perfectly captures the essence of your design vision.</p>
+                    
+                    <h5>4. Perfect Fit for Your Space</h2>
+                    <p>One of the greatest advantages of customizing wall art is the ability to create a piece that fits your space perfectly. Whether you have a small nook that needs a pop of color or a large wall that demands a statement piece, custom sizing ensures that your wall art complements the proportions of your room and enhances its overall aesthetic appeal.</p>
+                    
+                    <h5>5. Collaboration and Creativity</h2>
+                    <p>Customizing wall art is a collaborative process that allows you to work closely with artists and designers to bring your vision to life. It's an opportunity to tap into their expertise and creativity while staying true to your own design sensibilities. Together, you can explore different ideas, experiment with various techniques, and create a piece that exceeds your expectations.</p>
+                    
+                    <h5>6. Timeless Investment</h2>
+                    <p>Investing in custom wall art is investing in a timeless piece that will stand the test of time. Unlike mass-produced artwork, custom pieces are crafted with care and attention to detail, using high-quality materials and craftsmanship techniques. They become cherished heirlooms that tell a story and evoke memories for generations to come.</p>
+                    
+                    <p>In conclusion, customizing wall art is a powerful way to transform your space into a reflection of your unique style, personality, and passions. At Studio Woven Walls, we're passionate about helping you bring your vision to life and creating custom pieces that inspire and delight. So why settle for ordinary when you can have extraordinary? Customize your wall art today and elevate your home décor to new heights of artistry and elegance.</p>
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+                </div>
+                </div>
+                </div>
+                <div class="modal fade " id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        
+                        <div class="modal-content p-2 bg-dark">
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close Blog</button>
+                      <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                  <!-- <button type="button" class="btn-close bg-primary text-light" data-bs-dismiss="modal" style="float: right;" aria-label="Close"></button> -->
+                  <div class="card" style="filter: blur(4px);">
+                      <img src="../images/multi-colored-spool-close-up-sewing-thread-background-generated-by-ai.jpg" alt="" style="aspect-ratio: 30/3;object-fit: cover;">
+                  </div>
+                <div class="modal-header ">
+                  <h5 class="modal-title  text-light" id="exampleModalLabel">Mastering Pattern Play: A Guide to Mixing and Matching Patterns and Prints</h5>
+                </div>
+                <div class="modal-body   p-2 text-light">
+
+                    In the world of interior design, embracing patterns and prints can add depth, personality, and visual interest to any space. However, the thought of mixing and matching different patterns can be daunting for many. How do you create a cohesive look without overwhelming the senses? Fear not! With a few simple guidelines and a touch of creativity, you can master the art of pattern play and elevate your home décor to new heights.
+<ol style="list-style:upper-roman; ">
+
+    <li>
+        
+        Start with a Foundation*
+    Every successful design begins with a solid foundation. Start by selecting a dominant pattern or print that will serve as the anchor for your space. This could be a large-scale pattern on a rug, wallpaper, or upholstery fabric. Choose a pattern that you love and that sets the tone for the rest of the room.
+
+</li> 
+<li>
+    
+    Choose a Color Palette*
+Once you have your foundation pattern in place, it's time to choose a color palette that will guide your pattern selections. Consider pulling colors from your dominant pattern and using them as a guide for selecting complementary patterns. Aim for a mix of colors that balance each other and create visual harmony within the space.
+
+</li> 
+<li>
+    
+    Mix Scale and Proportion*
+When mixing patterns, it's important to vary the scale and proportion to create visual interest. Pair large-scale patterns with smaller-scale prints to create contrast and depth. This helps prevent patterns from competing with each other and allows each one to shine in its own right.
+
+</li> 
+<li>
+
+    Stick to a Theme*
+To create a cohesive look, consider sticking to a theme or motif throughout your space. This could be a floral theme, geometric shapes, or even an animal print motif. By repeating the same theme across different patterns and prints, you create a sense of unity and continuity within the room.
+
+</li> 
+<li>
+    
+    Balance Boldness with Neutrals*
+While bold patterns can add drama and personality to a space, it's important to balance them with neutral elements to prevent the room from feeling overwhelming. Use neutral solids or subtle patterns as a backdrop to anchor the space and allow your bolder patterns to take center stage.
+
+</li> 
+<li>
+
+    Add Texture and Layers*
+Don't be afraid to mix in elements of texture to add depth and dimension to your pattern play. Incorporate tactile materials like woven textiles, plush rugs, or textured wallpapers to create visual interest and balance within the room.
+
+</li> 
+<li>
+    
+    Trust Your Instincts*
+Above all, trust your instincts and have fun with the process! Experiment with different combinations, play with scale and proportion, and don't be afraid to take risks. Mixing and matching patterns is an art form, and there are no hard and fast rules. Let your creativity guide you as you curate a space that reflects your unique style and personality.
+
+</li> 
+</ol>
+Incorporating patterns and prints into your home décor can be a fun and rewarding experience. By following these simple guidelines and embracing your creativity, you can master the art of pattern play and create a space that is as visually captivating as it is comfortable and inviting. So go ahead, mix and match with confidence, and let your personality shine through in every pattern and print!
+</div>
+              </div>
+            </div>
+          </div>
+    </body>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="margin-right: 3%;">
+                    <h3 style="color: #fff;">Connect with us!</h3>
+                    <ul class="contact-info" style="list-style: none;">
+                        <li><a style="text-decoration: none; color: #fff;" href="mailto:studiowovenwalls@gmail.com"><i
+                                    class='bx bx-envelope'></i> studiowovenwalls@gmail.com </a></li>
+                        <li><a style="text-decoration: none; color: #fff;" href="tel:+918600172559"><i
+                                    class='bx bx-phone-call'></i> +91 8076240785</li></a>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-4">
+                    <h3 style="color: #fff;">Social Media Presence</h3>
+                    <ul class="social-media" style="list-style: none;">
+                        <li><a style="text-decoration: none; color: #fff;text-align: left;"
+                                href=" https://www.instagram.com/studiowovenwalls/ " class="instagram" target='_blank'>
+                                <i class='bx bxl-instagram'></i></a></li>
+                        <li><a style="text-decoration: none; color: #fff;text-align: left;"
+                                href="https://www.youtube.com/channel/UCTXtvdKul3_k0qTRTc9A5Iw" class="instagram"
+                                target='_blank'><i class='bx bxl-youtube'></i></a></li>
+                        <li><a style="text-decoration: none; color: #fff;text-align: left;"
+                                href="https://www.linkedin.com/in/aditi-bansal-746943147?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                                class="instagram" target='_blank'><i class='bx bxl-linkedin'></i></a></li>
+                                <li><a  style = "text-decoration: none; color: #fff;" href="https://www.facebook.com/profile.php?id=61560076322633&mibextid=LQQJ4d" target='_blank' class="instagram"><i class='bx bxl-facebook' ></i></a></li>
+                        <!-- <li><a  style = "text-decoration: none; color: #fff;" href="https://www.facebook.com/profile.php?id=100095018269683&locale=hi_IN&paipv=0&eav=AfaKrcQHQz9HQtEmVUwoOn7O-jrT848g1EC97qw3LcVFIXmf_hh1MC2XA8-G2NPrkqU" target='_blank' class="twitter"></a></li>
+                <li><a  style = "text-decoration: none; color: #fff;" href="https://twitter.com/vbblegal" class="instagram" target='_blank'><i class='bx bxl-instagram'></i></a></li>
+                <li><a  style = "text-decoration: none; color: #fff;" href="https://www.linkedin.com/in/vbb-legal-2a746a289/?originalSubdomain=in" class="instagram" target='_blank'> <i class='bx bxl-instagram'></i></a></li> -->
+                    </ul>
+                </div>
+
+                <div class="col-md-3 footer_address">
+                    <img style="" src="../images/swwlogo.png" class="footer_logo"><br>
+
+                    <!-- <li style="color: white; list-style: none;" class="mt-3">424, MOHID HEIGHTS, RTO Rd, </li>
+                <li style="color: white; list-style: none;">Suresh Nagar, Andheri West, Mumbai, Maharashtra 400053.</li> -->
+                    <!-- <hr style="opacity: 0.5;">
+                <li style="color: white; list-style: none;">
+                  Swapna Sakar Society, beside Versova Metro Station, Andheri West, Mumbai- 400053
+                </li> -->
+                    <!-- <hr style="opacity: 0.5;">
+                <li style="color: white; list-style: none;" >Office No 303, Pearl Apartment, At Rees, Post Mohopada, Near Panvel, Navi Mumbai 410222.</li> -->
+                </div>
+
+
+
+            </div>
+        </div>
+        <p class="mt-2" style="color: #fff;margin-right: 1%; text-align: center;">&copy; 2024 Studio Woven Walls. All
+            rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const observer = new IntersectionObserver(entries => {
+        //         entries.forEach(entry => {
+        //             if (entry.isIntersecting) {
+        //                 entry.target.classList.add('animate');
+        //             }
+        //         });
+        //     }, {
+        //         threshold: 0.5 // Adjust if needed, dictates how much of an element must be in view to trigger
+        //     });
+
+        //     // Target elements with the class 'section' for the animation
+        //     document.querySelectorAll('section').forEach(section => {
+        //         observer.observe(section);
+        //     });
+        // });
+
+    </script>
+    <script>
+        // $(document).ready(function () {
+        //     const images = $('.image-container img');
+        //     let currentIndex = 0;
+        //     let animationInterval = setInterval(revealImage, 2000); // Set the interval
+
+        //     function revealImage() {
+        //         if (currentIndex >= images.length - 1) { // Check if the last image is already displayed
+        //             clearInterval(animationInterval); // Stop the interval
+        //             return; // Exit the function
+        //         }
+        //         const nextIndex = (currentIndex + 1) % images.length;
+        //         images.eq(nextIndex).css('z-index', currentIndex + 2).css('opacity', 1); // Fade in the next image with incrementing z-index
+        //         currentIndex = nextIndex;
+        //     }
+        // });
+    </script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+
+    <!-- Initialize Swiper -->
+    <script>
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     var swiper = new Swiper(".mySwiper", {
+        //         slidesPerView: 1,
+        //         spaceBetween: 30,
+        //         pagination: {
+        //             el: ".swiper-pagination",
+        //             clickable: true,
+        //         },
+        //         breakpoints: {
+        //             // when window width is <= 640px
+        //             640: {
+        //                 slidesPerView: 3,
+        //                 spaceBetween: 20
+        //             }
+        //         }
+        //     });
+        // });
+    </script>
+    <script>
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const typingTextElement = document.querySelector('.typing-text');
+        //     const texts = JSON.parse(typingTextElement.getAttribute('data-texts'));
+        //     let index = 0;
+        //     let textIndex = 0;
+        //     let text = texts[textIndex];
+
+        //     function type() {
+        //         if (index < text.length) {
+        //             typingTextElement.textContent += text.charAt(index);
+        //             index++;
+        //             setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
+        //         } else {
+        //             // Call the callback function once typing is complete
+        //             typingComplete();
+        //         }
+        //     }
+
+        //     function typingComplete() {
+        //         // Add your code to execute after typing is complete
+        //         setTimeout(erase, 1000); // Delay before erasing
+        //     }
+
+        //     function erase() {
+        //         if (index > 0) {
+        //             typingTextElement.textContent = text.substring(0, index - 1);
+        //             index--;
+        //             setTimeout(erase, 50); // Adjust erasing speed here (in milliseconds)
+        //         } else {
+        //             textIndex++;
+        //             if (textIndex >= texts.length) textIndex = 0;
+        //             text = texts[textIndex];
+        //             setTimeout(type, 1000); // Delay before typing the next text
+        //         }
+        //     }
+
+        //     type();
+        // });
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy-load"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazy-load");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    // Fallback for browsers without Intersection Observer support
+    lazyImages.forEach(function(lazyImage) {
+      lazyImage.src = lazyImage.dataset.src;
+      lazyImage.classList.remove("lazy-load");
+    });
+  }
+});
+
+    </script>
+    <script>
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const sections = document.querySelectorAll('.container'); // Make sure elements have 'section' class
+
+        //     const observer = new IntersectionObserver(entries => {
+        //         entries.forEach(entry => {
+        //             if (entry.isIntersecting) {
+        //                 entry.target.classList.add('fadeInLeft');
+        //             } else {
+        //                 entry.target.classList.remove('fadeInLeft');
+        //             }
+        //         });
+        //     }, {
+        //         threshold: 0.5 // Trigger when half of the element is in view
+        //     });
+
+        //     sections.forEach(section => {
+        //         observer.observe(section);
+        //     });
+        // });
+
+    </script>
+
+</html>
+
+
+<!-- <script src="js/owl.carousel.min.js"></script>
+<script src="./js/script.js"></script> -->
