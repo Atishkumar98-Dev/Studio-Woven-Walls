@@ -85,12 +85,15 @@
     }
     .social-icons {
       margin-top: 20px;
+      position: relative; /* Ensure this is set */
+      z-index: 3; /* Set a higher z-index for clickable elements */
     }
     .social-icons a {
-      margin: 0 10px;
-      color: white;
-      font-size: 1.5rem;
-      transition: color 0.3s;
+      text-decoration: none;
+  color: #FFF;
+  font-size: 2rem;
+  margin: 0.5%;
+  cursor: pointer;
     }
     .social-icons a:hover {
       color: #ffcd3c;
