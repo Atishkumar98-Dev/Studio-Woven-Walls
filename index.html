@@ -1,155 +1,444 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Under Construction</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
-  <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    .bg-construction {
-      background-image: url('../images/banner.jpeg'); /* Make sure this path is correct */
-      height: 90vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-    }
-    .bg-construction::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(240, 181, 18, 0.3); /* Blue tint with 30% opacity */
-  z-index: 1; /* Ensure it's below text */
-}
-    .construction-text {
-  text-align: center;
-  padding: 30px;
-  width: 100%;
-  background: linear-gradient(135deg, #000000, #333333, #888784, #91908c);
-  /* background: repeating-linear-gradient(
-    135deg,
-    #ffcc00,  
-    #ffcc00 20px,  
-    #000000 20px, 
-    #000000 40px 
-  ); */
-  background-size: 200% 200%; /* Increase for more movement */
-  animation: stripeMove 19s linear infinite; /* Continuous movement */
-  /* filter: drop-shadow(1px 1px 5px rgba(230, 160, 9, 0.7)); */
-}
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-87FSZLXFLH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-87FSZLXFLH');
+    </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-.stripe{
-  text-align: center;
-  padding: 30px;
-  width: 100%;
-  background: repeating-linear-gradient(
-    135deg,
-    #ffcc00,  
-    #ffcc00 20px,  
-    #000000 20px,  
-    #000000 40px  
-  );
-  background-size: 200% 200%; /* Increase for more movement */
-  animation: stripeMove 19s linear infinite; /* Continuous movement */
-  border-radius: 15px;
-  filter: drop-shadow(1px 1px 5px rgba(184, 92, 92, 0.7));
-}
-@keyframes stripeMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-    .construction-text h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    .construction-text p {
-      font-size: 1.2rem;
-    }
-    .countdown-timer {
-      font-size: 2rem;
-      margin-top: 20px;
-    }
-    .social-icons {
-      margin-top: 20px;
-      position: relative; /* Ensure this is set */
-      z-index: 3; /* Set a higher z-index for clickable elements */
-    }
-    .social-icons a {
-      text-decoration: none;
-  color: #FFF;
-  font-size: 2rem;
-  margin: 0.5%;
-  cursor: pointer;
-    }
-    .social-icons a:hover {
-      color: #ffcd3c;
-    }
-
-  </style>
-</head>
-<body>
-    <div class="stripe">
-
-    </div>
-  <div class="bg-construction">
-    <div class="construction-text">
-      <h1> Site is Under Construction </h1>
-
-      <p>Our website is currently undergoing scheduled maintenance. We should be back shortly. Thank you for your patience.</p>
-      <!-- <div class="countdown-timer" id="countdown"></div> -->
-      <div class="social-icons">
-        <p>Connect with us:</p>
-        <a style="text-decoration: none; color: #FFF; font-size:2rem; margin: .5%;" href="https://www.instagram.com/studiowovenwalls/" target="_blank"><i class='fab fa-instagram'></i></a>
-        <a style="text-decoration: none; color: #FFF; font-size:2rem; margin: .5%;" href="https://www.youtube.com/channel/UCTXtvdKul3_k0qTRTc9A5Iw" target="_blank"><i class='fab fa-youtube'></i></a>
-        <a style="text-decoration: none; color: #FFF; font-size:2rem; margin: .5%;" href="https://www.linkedin.com/in/aditi-bansal-746943147?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class='fab fa-linkedin'></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="stripe">
-
-  </div>
-  <script>
-    // Countdown Timer
-    (function() {
-      const countdownElement = document.getElementById('countdown');
-      const targetDate = new Date('2024-12-31T23:59:59').getTime();
-
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const timeLeft = targetDate - now;
-
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-        if (timeLeft < 0) {
-          clearInterval(timerInterval);
-          countdownElement.innerHTML = "We're live now!";
-        }
+    <!-- Bootstrap CSS -->
+    <style>
+      .instagram-media{
+        height: 60vh;
+        width: 20% !important;
       }
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" href="./images/sww-logo.jpeg">
+    <link rel="stylesheet" type="text/css" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/for-card.css">
+    <title>Studio Woven Walls</title>
+  </head>
+  <body>
 
-      const timerInterval = setInterval(updateCountdown, 1000);
-    })();
-  </script>
+    <section id="Banner-section" class="fadeInLeft section">
+      
+      <div class="Textual">
+        <h2 class="awesome">We <b>CURATE</b> </h2>
+        
+        <h1 class="typing-text" data-texts='["TUFTED ARTISTRIES", "KNOTTED LUXURIES", "WALL WORK","WALL ART"]'> </h1>
+      </div>
+  
+            
+            
+           
+             
+           </section>
+     
+    <nav class="navbar navbar-expand-lg section sticky-top navbar-light bg-light">
+        <div class="container fadeInLeft">
+          <a class="navbar-brand" href="#">
+            <img src="./images/swwlogo.png" alt="" class = 'sww-logo'>Studio Woven Walls
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 align-items-end justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/aboutus/">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog/">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gallery</a>
+              </li>
+            </ul>
+         
+          </div>
+        </div>
+      </nav>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+
+
+      <section id="aboutus" class="fadeInLeft">
+        <div class="container mt-5">
+            
+            <div class="about-us-section fadeInLeft">
+
+                <div class="about-us-header mb-5">
+                    About us
+                </div>
+                <div class="content" style="">
+
+                  <p class="fadeInLeft para-content">
+                    Studio Woven Walls is a pioneering initiative that redefines the landscape of wall artistry by merging traditional Indian weaving techniques with contemporary design. Rooted in a profound respect for heritage and a commitment to innovation, it celebrates the rich tapestry of Indian craftsmanship, elevating the skills of Indian weavers to unprecedented levels of recognition. Central to its mission is the empowerment of these artisans, providing them with a global platform to showcase their talents and fostering a renewed sense of pride within the weaving community. 
+                    At its core, Studio Woven Walls seamlessly integrates the ancient practice of clay draping with modern design sensibilities, yielding a mesmerizing aesthetic that invites viewers on a journey of discovery.
+                    
+                  </p>
+       
+                </div>
+                <div class="container mt-3">
+                    <a href ='aboutus/'  class="common-button fadeInLeft" style="float: right;">More about us</a>
+                </div>
+
+            </div>
+        </div>
+        </section>
+
+
+        <section id="aboutus" class="container section">
+            <div class="about-us-section container  fadeInLeft">
+                <div class="about-us-header mt-5 mb-5">
+                    Categories
+                 </div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./images/carousel-1.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/carousel-2.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/carousel-3.png" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+        
+        </section>
+
+        <!-- <section id="customization" class="container section">
+          <div class="about-us-section container fadeInLeft">
+          <div class="about-us-header mt-5 mb-5">
+              Exhibition
+          </div>
+      
+          <div class="customizations mb-5 ">
+              <div class="exhibition">
+                <div class="exhibition_textual_content">
+
+                </div>
+                <div class="image_slider">
+                  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="..." class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+       
+              <div class="image-section container mb-3">
+                  <div class="images-with-text">
+                      <img src="./images/threads.png" alt="">
+                      <p>Material</p>
+                  </div> 
+                  <div class="images-with-text">
+                      <img src="./images/wall.png" alt="">
+                      <p>Design</p>
+                  </div>
+      
+                  <div class="images-with-text">
+                      <img src="./images/pantone.png" alt="">
+                      <p>Color</p>
+                  </div>
+                  <div class="images-with-text">
+                      <img src="./images/ruler.png" alt="">
+                      <p>Sizes</p>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </section> -->
+        
+      
+
+
+<section id="customization" class="container section">
+    <div class="about-us-section container fadeInLeft">
+    <div class="about-us-header mt-5 mb-5">
+        Customizations
+    </div>
+
+    <div class="customizations mb-5 ">
+        <p class="" style="text-align: left;">
+            Size? Check. Material? Check. Shape and Colour? Double-check. We believe that your
+choices should know no bounds, which is why we empower you to design products that
+align perfectly with your style, needs, and personality. We believe that your living spaces
+should be a reflection of your unique style, which is why we offer customization in size,
+material, shape, and colors. Whether it's a wall rug or a wall abstract or even a mirror
+we've got you covered with extremely quirky designs, colours and much more.
+        </p>
+ 
+        <div class="image-section container mb-3">
+            <div class="images-with-text">
+                <img src="./images/threads.png" alt="">
+                <p>Material</p>
+            </div> 
+            <div class="images-with-text">
+                <img src="./images/wall.png" alt="">
+                <p>Design</p>
+            </div>
+
+            <div class="images-with-text">
+                <img src="./images/pantone.png" alt="">
+                <p>Color</p>
+            </div>
+            <div class="images-with-text">
+                <img src="./images/ruler.png" alt="">
+                <p>Sizes</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- <div class="social-media-presence"style="display:flex;flex-direction:row;justify-content:space-evenly">
+  <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/C7wkohcPAu_/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/C7wkohcPAu_/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/C7wkohcPAu_/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Studio Woven Walls (@studiowovenwalls)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+  <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7185282612528115713" height="368" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+
+</div> -->
+      <footer class="footer mt-5 section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4" style="margin-right: 3%;">
+              <h3 style="color: #94BBCC;">Connect with us!</h3>
+              <ul class="contact-info" style="list-style: none;">
+                <li><a style="text-decoration: none; color: #94BBCC;" href="mailto:studiowovenwalls@gmail.com"><i class='bx bx-envelope' ></i> studiowovenwalls@gmail.com </a></li>
+                <li><a style="text-decoration: none; color: #94BBCC;" href="tel:+918600172559"><i class='bx bx-phone-call' ></i> +91 8076240785</li></a>
+                
+              </ul>
+            </div>
+            
+    
+            <div class="col-md-4">
+              <h3 style="color: #94BBCC;">Social Media Presence</h3>
+              <ul class="social-media" style="list-style: none;">
+                <li><a  style = "text-decoration: none; color: #94BBCC;text-align: left;"  href=" https://www.instagram.com/studiowovenwalls/ " class="instagram"  target='_blank'> <i class='bx bxl-instagram'></i></a></li>
+                <li><a  style = "text-decoration: none; color: #94BBCC;text-align: left;" href="https://www.youtube.com/channel/UCTXtvdKul3_k0qTRTc9A5Iw" class="instagram" target='_blank'><i class='bx bxl-youtube' ></i></a></li>
+                <li><a  style = "text-decoration: none; color: #94BBCC;text-align: left;" href="https://www.linkedin.com/in/aditi-bansal-746943147?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="instagram" target='_blank'><i class='bx bxl-linkedin' ></i></a></li>
+                <li><a  style = "text-decoration: none; color: #94BBCC;text-align: left;" href="https://www.facebook.com/profile.php?id=61560076322633&mibextid=LQQJ4d" target='_blank' class="instagram"><i class='bx bxl-facebook' ></i></a></li>
+                <!-- <li><a  style = "text-decoration: none; color: #fff;" href="https://twitter.com/vbblegal" class="instagram" target='_blank'><i class='bx bxl-instagram'></i></a></li>
+                <li><a  style = "text-decoration: none; color: #fff;" href="https://www.linkedin.com/in/vbb-legal-2a746a289/?originalSubdomain=in" class="instagram" target='_blank'> <i class='bx bxl-instagram'></i></a></li> -->
+              </ul>
+            </div>
+    
+            <div class="col-md-3 footer_address">
+              <img style="" src ="./images/swwlogo.png" class ="footer_logo"><br>
+              
+                <!-- <li style="color: white; list-style: none;" class="mt-3">424, MOHID HEIGHTS, RTO Rd, </li>
+                <li style="color: white; list-style: none;">Suresh Nagar, Andheri West, Mumbai, Maharashtra 400053.</li> -->
+                <!-- <hr style="opacity: 0.5;">
+                <li style="color: white; list-style: none;">
+                  Swapna Sakar Society, beside Versova Metro Station, Andheri West, Mumbai- 400053
+                </li> -->
+                <!-- <hr style="opacity: 0.5;">
+                <li style="color: white; list-style: none;" >Office No 303, Pearl Apartment, At Rees, Post Mohopada, Near Panvel, Navi Mumbai 410222.</li> -->
+              </div>
+              
+              
+              
+            </div>
+          </div>
+          <p class="mt-2" style="color: #94BBCC;margin-right: 1%; text-align: center;">&copy; 2024 Studio Woven Walls. All rights reserved.</p>
+      </footer>
+    
+  </body>
+  <script async defer src="//www.instagram.com/embed.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, {
+        threshold: 0.5 // Adjust if needed, dictates how much of an element must be in view to trigger
+    });
+
+    // Target elements with the class 'section' for the animation
+    document.querySelectorAll('.section').forEach(section => {
+        observer.observe(section);
+    });
+});
+
+      </script>
+      <script>
+          $(document).ready(function(){
+              const images = $('.image-container img');
+              let currentIndex = 0;
+              let animationInterval = setInterval(revealImage, 2000); // Set the interval
+      
+              function revealImage() {
+                  if (currentIndex >= images.length - 1) { // Check if the last image is already displayed
+                      clearInterval(animationInterval); // Stop the interval
+                      return; // Exit the function
+                  }
+                  const nextIndex = (currentIndex + 1) % images.length;
+                  images.eq(nextIndex).css('z-index', currentIndex + 2).css('opacity', 1); // Fade in the next image with incrementing z-index
+                  currentIndex = nextIndex;
+              }
+          });
+      </script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  // document.addEventListener('DOMContentLoaded', function () {
+  //     var swiper = new Swiper(".mySwiper", {
+  //       slidesPerView: 1,
+  //       spaceBetween: 30,
+  //       pagination: {
+  //         el: ".swiper-pagination",
+  //         clickable: true,
+  //       },
+  //       breakpoints: {
+  //         // when window width is <= 640px
+  //         640: {
+  //           slidesPerView: 3,
+  //           spaceBetween: 20
+  //         }
+  //       }
+  //     });
+  //   });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const typingTextElement = document.querySelector('.typing-text');
+  const texts = JSON.parse(typingTextElement.getAttribute('data-texts'));
+  let index = 0;
+  let textIndex = 0;
+  let text = texts[textIndex];
+
+  function type() {
+    if (index < text.length) {
+      typingTextElement.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
+    } else {
+      // Call the callback function once typing is complete
+      typingComplete();
+    }
+  }
+
+  function typingComplete() {
+    // Add your code to execute after typing is complete
+    setTimeout(erase, 1000); // Delay before erasing
+  }
+
+  function erase() {
+    if (index > 0) {
+      typingTextElement.textContent = text.substring(0, index - 1);
+      index--;
+      setTimeout(erase, 50); // Adjust erasing speed here (in milliseconds)
+    } else {
+      textIndex++;
+      if (textIndex >= texts.length) textIndex = 0;
+      text = texts[textIndex];
+      setTimeout(type, 1000); // Delay before typing the next text
+    }
+  }
+
+  type();
+});
+
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll('.section'); // Make sure elements have 'section' class
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fadeInLeft');
+            } else {
+                entry.target.classList.remove('fadeInLeft');
+            }
+        });
+    }, {
+        threshold: 0.2 // Trigger when half of the element is in view
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+</script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
 </html>
+
+
+<script src="js/owl.carousel.min.js"></script>
+<script src="./js/script.js"></script>
