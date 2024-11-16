@@ -19,8 +19,8 @@ body{
     font-family: "Poppins", sans-serif;
     /* font-family: "Bebas Neue", sans-serif; */
     font-size: 1rem;
-    background-color: #000;
-    color: white !important;
+    background-color: #fff;
+    color: black !important;
 }
 .navbar-light .navbar-toggler-icon{
 background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 255, 09.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -68,8 +68,8 @@ animation: fadeInLeft 1s forwards; /* 'forwards' keeps the element in the final 
 }
 .navbar-expand-lg .navbar-nav .nav-link{
     padding-left: 2rem;
-    color: #FFF;
-    background-color: #000;
+    color: #000;
+    background-color: #fff;
 }
 .navbar-expand-lg .navbar-nav .nav-link .active {
     color: #000 !important;
@@ -77,13 +77,13 @@ animation: fadeInLeft 1s forwards; /* 'forwards' keeps the element in the final 
     
 }
 .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link{
-    color: #FFF !important;
+    color: #000 !important;
 }
 .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link:hover{
-    color: #FFF !important;
+    color: #000 !important;
 }
 .bg-light{
-    background-color: #000 !important;
+    background-color: #fff !important;
 }
 
 .img-fluid {
@@ -120,7 +120,8 @@ animation: fadeInLeft 1s forwards; /* 'forwards' keeps the element in the final 
           
             /* Footer */
 footer{
-background-color: #000;
+background-color: #fff;
+color: #000;
 padding: 2%;
 }
             .social-media{
@@ -249,9 +250,13 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 }
+
+
 .navbar-brand {
-color: #fff !important;
+color: #000 !important;
 }
+
+
 .common-heading{
 border-bottom: 4px solid #94BBCC;
 font-family: "Dancing Script", cursive;
